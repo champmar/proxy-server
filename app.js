@@ -13,16 +13,17 @@ app.post('/mirror',async (req, res) => {
     try {
         const { url, method, headers, data } = req.body;
         console.log({ url, method, headers, data });
-        const res = await axios({
+        const response = await axios({
             url,
             method,
             headers,
             data
         })
 
-        res.send(res.data)
-
+        console.log(response);
+        res.send(response.data)
     } catch (err) {
+        console.log(err);
         res.send({
             err: err.status,
             msg: err.data,
