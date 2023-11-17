@@ -25,7 +25,7 @@ app.post('/mirror',async (req, res) => {
     } catch (err) {
         res.send({
             err: err.status,
-            msg: err.message,
+            msg: err.data,
             raw: JSON.stringify(err)
         })
     }
