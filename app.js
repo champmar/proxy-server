@@ -20,15 +20,25 @@ app.post('/mirror',async (req, res) => {
             data
         })
 
-        console.log(response);
-        res.send(response.data)
+        const instance = {
+            RESPONSE: {
+                status: response.status,
+                data: response.data
+            }
+        }
+
+        console.log(instance);
+        res.send(response)
     } catch (err) {
-        console.log(err);
-        res.send({
-            err: err.status,
-            msg: err.data,
-            raw: JSON.stringify(err)
-        })
+        const instance = {
+            RESPONSE: {
+                status: err.status,
+                data: err.data
+            }
+        }
+
+        console.log(instance);
+        res.send(instance)
     }
 })
 
