@@ -37,8 +37,7 @@ app.post('/mirror',async (req, res) => {
             }
         }
 
-        console.log(err);
-        // console.log(instance);
+        console.log(instance);
         res.send(instance)
     }
 })
