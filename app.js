@@ -32,8 +32,8 @@ app.post('/mirror',async (req, res) => {
     } catch (err) {
         const instance = {
             ERROR: {
-                status: err.data.status,
-                data: err.data.data
+                status: err,
+                data: err
             }
         }
 
