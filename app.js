@@ -30,6 +30,7 @@ app.post('/mirror',async (req, res) => {
         console.log(instance);
         res.send(response)
     } catch (err) {
+        console.log(err);
         const instance = {
             ERROR: {
                 status: err.response.status,
